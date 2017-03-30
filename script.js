@@ -12,6 +12,9 @@
     messagingSenderId: "802630250681"
   };
   firebase.initializeApp(config);
+// added code//
+var database = firebase.database();
+var ref = database.ref("data");
 // ***********************************************/////////////////////////////
 
 //Global//////////////////////////////////////////////////////////////////////
