@@ -26,9 +26,9 @@ var submitB = document.getElementById("submitB");
 submitB.addEventListener("click", function(){
 
 firebase.database().ref("data/").push({
-  model:model,
-  year: year,
-  horse: horse
+  model:model.value,
+  year: year.value,
+  horse: horse.value
 
 });
 
