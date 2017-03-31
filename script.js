@@ -46,7 +46,23 @@ firebase.database().ref("data/").push({
 
 // Retrive data///////////////////////////////////////////////////////////////////
 
+firebase.database().ref("data/")
+    .on("value", function (snapshot) {
 
+        var html = "";
+
+        snapshot.forEach(function (i) {
+            var element = i.val();
+            var model = element.model;
+            var year = element.year;
+            var horse = element.horse;
+            html += "<li><b>" + model + " " + year + " " + horse +"</li>";
+console.log(i);
+        });
+
+        dataUl.innerHTML = html;
+
+    });
 
 
 //***************************************************************************** */
