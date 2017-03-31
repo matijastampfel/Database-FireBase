@@ -56,7 +56,7 @@ firebase.database().ref("data/")
             var model = element.model;
             var year = element.year;
             var horse = element.horse;
-            html += "<li><b>" + model + " " + year + " " + horse +"</li>";
+            html += "<li><b> Model: " + model + " Year: " + year + " Horsepower: " + horse +"</li>";
 console.log(i);
         });
 
