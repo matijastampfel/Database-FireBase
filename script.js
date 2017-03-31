@@ -1,5 +1,6 @@
 /*jshint esnext: true, moz: true*/
 /*jslint browser:true */
+/*global firebase*/
 
 
 // Fire base///////////////////////////////////////////////////////////////
@@ -18,11 +19,15 @@ var ref = database.ref("data");
 // ***********************************************/////////////////////////////
 
 //Global//////////////////////////////////////////////////////////////////////
-var model = document.getElementById("model");
-var year = document.getElementById("year");
-var horse = document.getElementById("horsepower");
-var submitB = document.getElementById("submitB");
-
+var model = document.getElementById("model"); //add for Model form
+var year = document.getElementById("year"); // add for Year form
+var horse = document.getElementById("horsepower"); //add for horse form
+var submitB = document.getElementById("submitB"); // submit button
+var modelSB = document.getElementById("modelSB"); // sort model
+var yearSB = document.getElementById("yearSB"); // sort year
+var horseSB = document.getElementById("horseSB"); // sort horse
+var searchNum = document.getElementById("searchNum"); //search number form
+var searchB = document.getElementById("searchB"); //search number button
 //************************************************************************** */
 
 // Input text ////////////////////////////////////////////////////////////////
@@ -38,3 +43,10 @@ firebase.database().ref("data/").push({
 }); 
 
 // **************************************************************************
+
+// Retrive data///////////////////////////////////////////////////////////////////
+
+
+
+
+//***************************************************************************** */
