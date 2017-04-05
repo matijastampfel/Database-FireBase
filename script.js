@@ -66,3 +66,41 @@ console.log(i);
 
 
 //***************************************************************************** */
+
+//Sort by Model//////////////////////////////////////////////////////////////
+modelSB.addEventListener("click", function(){
+
+firebase.database().ref("data/").orderByChild("model/")
+.once("value", function(snapshot){
+
+  var html = "";
+
+snapshot.forEach(function (i) {
+            var element = i.val();
+            var model = element.model;
+            var year = element.year;
+            var horse = element.horse;
+            html += "<li><b> Model: " + model + " Year: " + year + " Horsepower: " + horse +"</li>";
+console.log(i);
+        });
+
+        dataUl.innerHTML = html;
+
+});
+
+
+
+});
+
+
+
+
+//****************************************************************************** */
+
+//Sort by Year//////////////////////////////////////////////////////////////
+
+
+
+
+
+//************************************************************** */
