@@ -154,3 +154,34 @@ console.log(i);
 
 
 //************************************************************* */
+
+//Show number of search////////////////////////////////////////////
+searchB.addEventListener("click", function(){
+
+let showNum = searchNum.value;
+
+Number(showNum);
+
+  firebase.database().ref("data/").orderByChild("model/").limitToFirst(Number(showNum))
+  .on("value", function(snapshot){
+
+    var html = "";
+
+    snapshot.forEach(function (i) {
+            var element = i.val();
+            var model = element.model;
+            var year = element.year;
+            var horse = element.horse;
+            html += "<li><b> Model: " + model + " Year: " + year + " Horsepower: " + horse +"</li>";
+console.log(i);
+        });
+
+        dataUl.innerHTML = html;
+
+
+  });
+
+
+});
+
+//************************************************************** */
