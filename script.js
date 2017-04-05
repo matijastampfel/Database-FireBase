@@ -98,9 +98,59 @@ console.log(i);
 //****************************************************************************** */
 
 //Sort by Year//////////////////////////////////////////////////////////////
+yearSB.addEventListener("click", function(){
 
+ firebase.database().ref("data/").orderByChild("year/")
+ .once("value", function(snapshot){
+var html = "";
+
+snapshot.forEach(function (i) {
+            var element = i.val();
+            var model = element.model;
+            var year = element.year;
+            var horse = element.horse;
+            html += "<li><b> Model: " + model + " Year: " + year + " Horsepower: " + horse +"</li>";
+console.log(i);
+        });
+
+        dataUl.innerHTML = html;
+
+
+ });
+
+
+});
 
 
 
 
 //************************************************************** */
+
+//Sort by Horsepower//////////////////////////////////////////////
+horseSB.addEventListener("click", function(){
+
+firebase.database().ref("data/").orderByChild("horse/")
+.once("value", function(snapshot){
+
+  var html = "";
+
+snapshot.forEach(function (i) {
+            var element = i.val();
+            var model = element.model;
+            var year = element.year;
+            var horse = element.horse;
+            html += "<li><b> Model: " + model + " Year: " + year + " Horsepower: " + horse +"</li>";
+console.log(i);
+        });
+
+        dataUl.innerHTML = html;
+
+  
+});
+
+
+});
+
+
+
+//************************************************************* */
